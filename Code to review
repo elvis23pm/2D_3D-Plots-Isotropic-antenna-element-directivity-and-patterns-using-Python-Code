@@ -1,0 +1,28 @@
+import numpy
+import matplotlib.pyplot as plt
+
+path = '/Users/cem/Desktop/'
+
+N = float(7)
+theta = numpy.arange(0, numpy.pi, numpy.pi/100)
+
+def normalized_element_pattern(theta):
+    return abs(numpy.sin(theta))
+def array_factor(theta, N):
+    return abs(float(1 / N) * numpy.sin(float(N * pi / 2)
+        * numpy.cos(theta))
+        / numpy.sin(float(pi / 2) * numpy.cos(theta)))
+plt.figure(figsize=(6, 4))
+plt.subplot(121, polar=True)
+plt.polar(theta, normalized_element_pattern(theta))
+plt.title('Element factor')
+plt.subplot(122, polar=True)
+plt.polar(theta, array_factor(theta, N), color='red',
+    label="Array factor")
+plt.polar(theta, array_factor(theta, N) *
+    normalized_element_pattern(theta),
+    label="Pattern", color='blue')
+plt.legend(loc='lower right', bbox_to_anchor = (1, 0))
+plt.subplots_adjust(wspace=0.3)
+plt.savefig(os.path.join(path, 'example3b.png'))
+plt.close()
